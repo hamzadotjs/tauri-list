@@ -16,6 +16,11 @@ A minimal task tracker ("Tasker") built with **Tauri v2**, **React**, and **Vite
 - Custom Material 3 theming (Gruvbox-inspired accent colors)
 - Cross-platform: desktop bundles (`.deb`, `.rpm`, AppImage) + Android build support
 
+## Installation
+- go to the latest release
+- download the installation file for your platform
+- enjoy!
+
 ## Development
 
 ```bash
