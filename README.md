@@ -1,16 +1,49 @@
-# React + Vite
+# tauri-list
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal task tracker ("Tasker") built with **Tauri v2**, **React**, and **Vite**, styled using [M3E (Material 3 Expressive)](https://matraic.github.io/m3e/) web components. Targets both desktop (Linux/Windows/macOS) and Android.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Tauri v2** — native shell
+- **React + Vite** — frontend
+- **@m3e/web / @m3e/react** — Material 3 Expressive components
+- **Gruvbox Material (Soft Dark)** — custom theme applied via M3E design tokens
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Add / remove tasks
+- Persisted to `localStorage`
+- Custom Material 3 theming (Gruvbox-inspired accent colors)
+- Cross-platform: desktop bundles (`.deb`, `.rpm`, AppImage) + Android build support
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run tauri dev
+```
+
+## Building
+
+Desktop:
+
+```bash
+npm run tauri build
+```
+
+Android:
+
+```bash
+npm run tauri android build
+```
+
+Build artifacts are output to `src-tauri/target/release/bundle/`.
+
+## Notes
+
+- Requires the Android SDK/NDK configured (`ANDROID_HOME`, `JAVA_HOME`) for Android builds.
+- AppImage bundling requires `linuxdeploy` and its plugins to be available on `PATH` (auto-downloaded to `~/.cache/tauri` by Tauri).
+
+## License
+
+MIT
