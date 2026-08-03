@@ -1,27 +1,21 @@
 # tauri-list
 
-A minimal task tracker ("Tasker") built with **Tauri v2**, **React**, and **Vite**, styled using [M3E (Material 3 Expressive)](https://matraic.github.io/m3e/) web components. Targets both desktop (Linux/Windows/macOS) and Android.
+A stupidly simple task tracker, "Tasker" — built because I wanted an excuse to mess with Tauri v2 and M3E's Material 3 Expressive components. Runs as a native desktop app (and Android, eventually) instead of yet another browser tab.
+
+![desktop preview](./desktop-preview.png)
+
+## Why
+
+I wanted a todo list that actually looks like something, not a bootstrap starter template. Themed it with a Gruvbox Material Soft Dark palette on top of M3E's design tokens.
 
 ## Stack
 
-- **Tauri v2** — native shell
+- **Tauri v2** — native shell, tiny binaries
 - **React + Vite** — frontend
-- **@m3e/web / @m3e/react** — Material 3 Expressive components
-- **Gruvbox Material (Soft Dark)** — custom theme applied via M3E design tokens
+- **@m3e/web** — Material 3 Expressive web components
+- Gruvbox Material (Soft Dark) theming via CSS custom properties
 
-## Features
-
-- Add / remove tasks
-- Persisted to `localStorage`
-- Custom Material 3 theming (Gruvbox-inspired accent colors)
-- Cross-platform: desktop bundles (`.deb`, `.rpm`, AppImage) + Android build support
-
-## Installation
-- go to the latest release
-- download the installation file for your platform
-- enjoy!
-
-## Development
+## Running it
 
 ```bash
 npm install
@@ -36,18 +30,19 @@ Desktop:
 npm run tauri build
 ```
 
-Android:
+Spits out a `.deb`, `.rpm`, and (if `linuxdeploy` cooperates) an AppImage in `src-tauri/target/release/bundle/`.
+
+Android (needs JDK 21 + Android Studio SDK/NDK set up first):
 
 ```bash
+npm run tauri android init
 npm run tauri android build
 ```
 
-Build artifacts are output to `src-tauri/target/release/bundle/`.
+## Known rough edges
 
-## Notes
-
-- Requires the Android SDK/NDK configured (`ANDROID_HOME`, `JAVA_HOME`) for Android builds.
-- AppImage bundling requires `linuxdeploy` and its plugins to be available on `PATH` (auto-downloaded to `~/.cache/tauri` by Tauri).
+- AppImage bundling needs `linuxdeploy` + plugins on `PATH` — Tauri auto-downloads them to `~/.cache/tauri`, but you may need to symlink/chmod them yourself depending on distro.
+- Bundle size warning on the JS chunk (~1.4MB) — haven't bothered code-splitting yet.
 
 ## License
 
