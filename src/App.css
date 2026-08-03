@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --md-sys-color-on-primary: #32302f;
+  --md-sys-color-primary: #d8a657;
+  --md-sys-color-surface: #32302f;
+  --md-sys-color-on-surface: #d4be98;
+  --md-sys-color-outline: #7c6f64;
+  --md-sys-color-secondary-container: #45403d;
+  --md-sys-color-on-secondary-container: #d8a657;
+  --md-sys-typescale-label-large-font-weight: bolder;
+}
+
+.Tasks-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.density-1 {
+  --md-sys-density-scale: -1;
+  --md-sys-density-size: 20px;
+}
+
+m3e-heading{
+  font-size: 5rem;
+  margin: 100px 15px 100px 15px;
+  font-family: JetBrains Mono;
+  color: #ffffff;
+}
+
+.Add{
+  background-color: #282a36;
+  margin-bottom: 15px;
+  margin-left: 3px;
+  border-radius: 8px;
+   outline-color: var(--md-sys-color-primary);
+}
+
+m3e-icon-button.remove {
+  --md-sys-color-primary: #d8a657;
+  --md-sys-color-on-primary: #32302f;
+}
+
+m3e-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+m3e-list-item {
+  width: 50%;
+}
