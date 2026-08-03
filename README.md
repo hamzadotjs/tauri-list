@@ -25,10 +25,6 @@ sudo dpkg -i tauri-list_*_amd64.deb
 
 # rpm
 sudo rpm -i tauri-list-*.x86_64.rpm
-
-# AppImage
-chmod +x tauri-list_*.AppImage
-./tauri-list_*.AppImage
 ```
 
 ## Running it
