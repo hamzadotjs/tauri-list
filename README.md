@@ -15,6 +15,22 @@ I wanted a todo list that actually looks like something, not a bootstrap starter
 - **@m3e/web** — Material 3 Expressive web components
 - Gruvbox Material (Soft Dark) theming via CSS custom properties
 
+## Install (prebuilt)
+
+Grab the latest `.deb`, `.rpm`, or AppImage from [Releases](../../releases) and install directly — no need to build from source.
+
+```bash
+# deb
+sudo dpkg -i tauri-list_*_amd64.deb
+
+# rpm
+sudo rpm -i tauri-list-*.x86_64.rpm
+
+# AppImage
+chmod +x tauri-list_*.AppImage
+./tauri-list_*.AppImage
+```
+
 ## Running it
 
 ```bash
