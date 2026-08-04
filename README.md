@@ -1,6 +1,6 @@
-# tauri-list
+# Tasker
 
-A stupidly simple task tracker, "Tasker" — built because I wanted an excuse to mess with Tauri v2 and M3E's Material 3 Expressive components. Runs as a native desktop app (and Android, eventually) instead of yet another browser tab.
+A stupidly simple task tracker, built because I wanted an excuse to mess with Tauri v2 and M3E's Material 3 Expressive components. Runs as a native desktop app, and an android app instead of yet another browser tab.
 
 ![desktop preview](./desktop-preview.png)
 
@@ -17,7 +17,7 @@ I wanted a todo list that actually looks like something, not a bootstrap starter
 
 ## Install (prebuilt)
 
-Grab the latest `.deb`, `.rpm`, or AppImage from [Releases](../../releases) and install directly — no need to build from source.
+Grab the latest `.deb`, `.rpm`, or APK from [Releases](../../releases) and install directly — no need to build from source.
 
 ```bash
 # deb
