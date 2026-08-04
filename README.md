@@ -5,6 +5,8 @@ A stupidly simple task tracker, built because I wanted an excuse to mess with Ta
 ![desktop preview](./desktop-preview.png)
 ![android-preview](./tasker-android.jpg)
 
+| ![desktop-preview](./desktop-preview.png) | ![android-preview](./tasker-android.jpg) |
+
 ## Why
 
 I wanted a todo list that actually looks like something, not a bootstrap starter template. Themed it with a Gruvbox Material Soft Dark palette on top of M3E's design tokens.
