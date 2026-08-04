@@ -2,10 +2,7 @@
 
 A stupidly simple task tracker, built because I wanted an excuse to mess with Tauri v2 and M3E's Material 3 Expressive components. Runs as a native desktop app, and an android app instead of yet another browser tab.
 
-![desktop preview](./desktop-preview.png)
-![android-preview](./tasker-android.jpg)
-
-| ![desktop-preview](./desktop-preview.png) | ![android-preview](./tasker-android.jpg) |
+<img src="desktop-preview.png" width="48%"> <img src="tasker-android.jpg" width="48%">
 
 ## Why
 
