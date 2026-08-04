@@ -3,6 +3,7 @@
 A stupidly simple task tracker, built because I wanted an excuse to mess with Tauri v2 and M3E's Material 3 Expressive components. Runs as a native desktop app, and an android app instead of yet another browser tab.
 
 ![desktop preview](./desktop-preview.png)
+![android-preview](./tasker-android.jpg)
 
 ## Why
 
