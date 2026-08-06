@@ -1,0 +1,49 @@
+name: Build Tauri List
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-tauri:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: 'macos-latest'
+            args: '--target aarch64-apple-darwin --bundles app,dmg'
+            arch: 'macos-aarch64'
+          - platform: 'macos-latest'
+            args: '--target x86_64-apple-darwin --bundles app,dmg'
+            arch: 'macos-x86_64'
+          - platform: 'ubuntu-22.04'
+            args: '--bundles appimage,deb'
+            arch: 'linux-x86_64'
+          - platform: 'windows-latest'
+            args: '--bundles nsis,msi'
+            arch: 'windows-x86_64'
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+      - if: matrix.platform == 'ubuntu-22.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf xdg-utils
+      - run: npm install
+      - run: npx @tauri-apps/cli build ${{ matrix.args }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-bundle-${{ matrix.arch }}
+          path: |
+            src-tauri/target/**/bundle/**/*.AppImage
+            src-tauri/target/**/bundle/**/*.deb
+            src-tauri/target/**/bundle/**/*.exe
+            src-tauri/target/**/bundle/**/*.msi
+            src-tauri/target/**/bundle/**/*.dmg
+            src-tauri/target/**/bundle/**/*.app
+          if-no-files-found: error

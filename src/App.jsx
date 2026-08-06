@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import "@m3e/react/all";
 import "./App.css"
+import "material-symbols/outlined.css";
 
 
 function App() {
   function saveTasks() {
    const tasks = [...document.querySelectorAll("#taskList m3e-list-item")].map(
   (li) => li.firstChild.textContent,
-    ); 
+    );
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 function addTaskElement(text) {
