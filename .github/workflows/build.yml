@@ -2,7 +2,7 @@ name: Build Tauri List
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   build-tauri:
     strategy:
