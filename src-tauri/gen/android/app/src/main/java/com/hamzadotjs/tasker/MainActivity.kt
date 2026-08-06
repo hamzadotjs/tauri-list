@@ -1,4 +1,4 @@
-package com.hamzadotjs.taurilist
+package com.hamzadotjs.tasker
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
