@@ -60,6 +60,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf xdg-utils
       - run: npm install
+      - if: matrix.command == 'android' || matrix.command == 'ios'
+        run: npx @tauri-apps/cli ${{ matrix.command }} init
       - run: npx @tauri-apps/cli ${{ matrix.command }} ${{ matrix.args }}
       - if: matrix.arch == 'linux-x86_64'
         run: |
