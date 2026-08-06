@@ -40,8 +40,6 @@ jobs:
             arch: 'ios'
             rust_targets: 'aarch64-apple-ios,x86_64-apple-ios,aarch64-apple-ios-sim'
     runs-on: ${{ matrix.platform }}
-    env:
-      NDK_HOME: ${{ env.ANDROID_NDK_LATEST_HOME }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -52,6 +50,8 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
+      - if: matrix.arch == 'android'
+        run: echo "NDK_HOME=$ANDROID_NDK_LATEST_HOME" >> $GITHUB_ENV
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.rust_targets }}
