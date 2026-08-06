@@ -36,7 +36,7 @@ jobs:
             rust_targets: 'aarch64-linux-android,armv7-linux-androideabi,i686-linux-android,x86_64-linux-android'
           - platform: 'macos-latest'
             command: 'ios'
-            args: 'build'
+            args: 'build --target aarch64-apple-ios-sim'
             arch: 'ios'
             rust_targets: 'aarch64-apple-ios,x86_64-apple-ios,aarch64-apple-ios-sim'
     runs-on: ${{ matrix.platform }}
@@ -78,5 +78,5 @@ jobs:
             src-tauri/target/**/bundle/**/*.app
             src-tauri/target/**/bundle/**/*.tar.gz
             src-tauri/gen/android/**/build/**/*.apk
-            src-tauri/gen/ios/**/*.ipa
+            src-tauri/gen/apple/**/*.app
           if-no-files-found: error
