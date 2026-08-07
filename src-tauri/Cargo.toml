@@ -3,7 +3,7 @@ name = "Tasker"
 version = "1.0.0-Jul2026"
 description = "A Tauri TodoList app made with React"
 authors = ["HamzaDotJS" , "SyntaxSpin"]
-edition = "2026"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

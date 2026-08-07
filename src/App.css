@@ -29,6 +29,9 @@ m3e-heading{
   margin: 100px 15px 100px 15px;
   font-family: JetBrains Mono;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Add{
